@@ -135,3 +135,6 @@ yarn-error.log
 *.pem
 .vscode/
 local.settings.json
+/.github/examples/ASSUMPTIONS.md
+/.github/examples/INDEX.md
+/.github/examples/README.md
