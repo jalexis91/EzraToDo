@@ -22,6 +22,8 @@ public class CreateTodoCommandHandler : IRequestHandler<CreateTodoCommand, Creat
         CreateTodoCommand request,
         CancellationToken cancellationToken)
     {
+        ValidateInput(request.Title, request.DueDate);
+
         var todo = new Todo
         {
             Title = request.Title,
@@ -35,6 +37,18 @@ public class CreateTodoCommandHandler : IRequestHandler<CreateTodoCommand, Creat
         var createdTodo = await _repository.CreateAsync(todo, cancellationToken);
 
         return new CreateTodoCommandResponse(createdTodo.Id, createdTodo.Title);
+    }
+
+    private static void ValidateInput(string title, DateTime? dueDate)
+    {
+        if (string.IsNullOrWhiteSpace(title))
+            throw new ValidationException(nameof(title), "Title is required");
+
+        if (title.Length > 200)
+            throw new ValidationException(nameof(title), "Title must not exceed 200 characters");
+
+        if (dueDate.HasValue && dueDate.Value <= DateTime.UtcNow)
+            throw new ValidationException(nameof(dueDate), "Due date must be in the future");
     }
 }
 
@@ -55,6 +69,8 @@ public class UpdateTodoCommandHandler : IRequestHandler<UpdateTodoCommand, Updat
         UpdateTodoCommand request,
         CancellationToken cancellationToken)
     {
+        ValidateInput(request.Title, request.DueDate);
+
         var todo = await _repository.GetByIdAsync(request.Id, cancellationToken);
         if (todo is null)
             throw new EntityNotFoundException("Todo", request.Id);
@@ -64,6 +80,18 @@ public class UpdateTodoCommandHandler : IRequestHandler<UpdateTodoCommand, Updat
         var updatedTodo = await _repository.UpdateAsync(todo, cancellationToken);
 
         return new UpdateTodoCommandResponse(updatedTodo.Id, updatedTodo.Title);
+    }
+
+    private static void ValidateInput(string title, DateTime? dueDate)
+    {
+        if (string.IsNullOrWhiteSpace(title))
+            throw new ValidationException(nameof(title), "Title is required");
+
+        if (title.Length > 200)
+            throw new ValidationException(nameof(title), "Title must not exceed 200 characters");
+
+        if (dueDate.HasValue && dueDate.Value <= DateTime.UtcNow)
+            throw new ValidationException(nameof(dueDate), "Due date must be in the future");
     }
 }
 
