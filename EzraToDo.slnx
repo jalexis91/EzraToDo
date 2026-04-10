@@ -4,6 +4,5 @@
   <Project Path="EzraToDo.Application/EzraToDo.Application.csproj" />
   <Project Path="EzraToDo.Domain/EzraToDo.Domain.csproj" />
   <Project Path="EzraToDo.Infrastructure/EzraToDo.Infrastructure.csproj" />
-  <Project Path="EzraToDo.ServiceDefaults/EzraToDo.ServiceDefaults.csproj" />
   <Project Path="EzraToDo.Tests/EzraToDo.Tests.csproj" />
 </Solution>

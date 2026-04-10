@@ -16,8 +16,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.ServiceDiscovery" Version="10.0.0" />
     <PackageReference Include="Microsoft.OpenApi" Version="2.4.1" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.12.0" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.12.0" />
     <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.12.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.12.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.12.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
   </ItemGroup>
 
@@ -25,7 +31,6 @@
     <ProjectReference Include="..\EzraToDo.Application\EzraToDo.Application.csproj" />
     <ProjectReference Include="..\EzraToDo.Infrastructure\EzraToDo.Infrastructure.csproj" />
     <ProjectReference Include="..\EzraToDo.Domain\EzraToDo.Domain.csproj" />
-    <ProjectReference Include="..\EzraToDo.ServiceDefaults\EzraToDo.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>

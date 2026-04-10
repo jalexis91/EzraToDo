@@ -1,19 +1,16 @@
 using EzraToDo.Api.Extensions;
 using EzraToDo.Api.Endpoints;
-using EzraToDo.ServiceDefaults;
 using Asp.Versioning;
 using Asp.Versioning.Conventions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // ============================================================================
-// ASPIRE SERVICE DEFAULTS
-// ============================================================================
-builder.AddServiceDefaults();
-
-// ============================================================================
 // SERVICE REGISTRATION
 // ============================================================================
+
+// Add application services (DbContext, MediatR, Repositories, ServiceDefaults)
+builder.Services.AddApplicationServices(builder.Configuration);
 
 // Add OpenAPI/Swagger documentation
 builder.Services.AddEndpointsApiExplorer();
@@ -56,9 +53,6 @@ builder.Services.AddCors(options =>
 // Add Problem Details and Global Exception Handling
 builder.Services.AddProblemDetails();
 builder.Services.AddExceptionHandler<EzraToDo.Api.Middleware.GlobalExceptionHandler>();
-
-// Add application services (DbContext, MediatR, Repositories)
-builder.Services.AddApplicationServices(builder.Configuration);
 
 // ============================================================================
 // PIPELINE CONFIGURATION
