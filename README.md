@@ -67,21 +67,18 @@ For detailed productionization steps including **BICEP templates**, **CI/CD pipe
 
 ## 🏗️ Architecture
 
-### Layered Architecture (4 Layers)
+### Layered Architecture (3 Layers)
 
 ```
 ┌─────────────────────────────────────────┐
 │    API Layer (Presentation)             │ ← REST endpoints, middleware
 │    EzraToDo.Api                         │
 ├─────────────────────────────────────────┤
-│    Application Layer (Business Logic)   │ ← CQRS commands/queries
-│    EzraToDo.Application                 │
+│    Core Layer (Domain & Application)    │ ← Entities, CQRS commands/queries
+│    EzraToDo.Core                        │
 ├─────────────────────────────────────────┤
 │    Infrastructure Layer (Data Access)   │ ← EF Core, repositories
 │    EzraToDo.Infrastructure              │
-├─────────────────────────────────────────┤
-│    Domain Layer (Core Business)         │ ← Entities, business rules
-│    EzraToDo.Domain                      │
 └─────────────────────────────────────────┘
 ```
 

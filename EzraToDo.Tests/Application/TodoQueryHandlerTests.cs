@@ -1,6 +1,6 @@
-using EzraToDo.Application.Features.Todos.Queries;
-using EzraToDo.Application.Interfaces;
-using EzraToDo.Domain.Entities;
+using EzraToDo.Core.Features.Todos.Queries;
+using EzraToDo.Core.Interfaces;
+using EzraToDo.Core.Entities;
 using EzraToDo.Tests.Fixtures;
 using FluentAssertions;
 using Moq;
@@ -130,7 +130,7 @@ public class TodoQueryHandlerTests
         var handler = new GetTodoByIdQueryHandler(_mockRepository.Object);
 
         // Act & Assert
-        await Assert.ThrowsAsync<EzraToDo.Domain.Exceptions.EntityNotFoundException>(
+        await Assert.ThrowsAsync<EzraToDo.Core.Exceptions.EntityNotFoundException>(
             () => handler.Handle(query, CancellationToken.None));
     }
 
@@ -158,3 +158,4 @@ public class TodoQueryHandlerTests
         result.Todos.Should().HaveCount(2);
     }
 }
+

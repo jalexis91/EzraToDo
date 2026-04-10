@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using EzraToDo.Domain.Exceptions;
+using EzraToDo.Core.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
@@ -65,3 +65,4 @@ public class GlobalExceptionHandler : IExceptionHandler
         };
     }
 }
+

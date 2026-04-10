@@ -1,4 +1,4 @@
-namespace EzraToDo.Domain.Exceptions;
+namespace EzraToDo.Core.Exceptions;
 
 /// <summary>
 /// Thrown when a requested entity is not found.
@@ -33,3 +33,4 @@ public class ValidationException : Exception
 
     public string? FieldName { get; }
 }
+

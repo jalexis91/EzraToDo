@@ -28,9 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EzraToDo.Application\EzraToDo.Application.csproj" />
+    <ProjectReference Include="..\EzraToDo.Core\EzraToDo.Core.csproj" />
     <ProjectReference Include="..\EzraToDo.Infrastructure\EzraToDo.Infrastructure.csproj" />
-    <ProjectReference Include="..\EzraToDo.Domain\EzraToDo.Domain.csproj" />
   </ItemGroup>
 
 </Project>

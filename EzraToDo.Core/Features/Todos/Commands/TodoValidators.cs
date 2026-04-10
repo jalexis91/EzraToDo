@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace EzraToDo.Application.Features.Todos.Commands;
+namespace EzraToDo.Core.Features.Todos.Commands;
 
 /// <summary>
 /// Validator for CreateTodoCommand.
@@ -39,3 +39,4 @@ public class UpdateTodoCommandValidator : AbstractValidator<UpdateTodoCommand>
             .WithMessage("Due date must be in the future");
     }
 }
+

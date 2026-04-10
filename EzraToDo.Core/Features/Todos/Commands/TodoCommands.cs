@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace EzraToDo.Application.Features.Todos.Commands;
+namespace EzraToDo.Core.Features.Todos.Commands;
 
 /// <summary>
 /// Command to create a new todo.
@@ -52,3 +52,4 @@ public record ReopenTodoCommand(int Id) : IRequest;
 /// Command to delete (soft delete) a todo.
 /// </summary>
 public record DeleteTodoCommand(int Id) : IRequest;
+

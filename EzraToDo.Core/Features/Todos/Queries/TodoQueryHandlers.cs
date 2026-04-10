@@ -1,8 +1,8 @@
 using MediatR;
-using EzraToDo.Application.Interfaces;
-using EzraToDo.Domain.Exceptions;
+using EzraToDo.Core.Interfaces;
+using EzraToDo.Core.Exceptions;
 
-namespace EzraToDo.Application.Features.Todos.Queries;
+namespace EzraToDo.Core.Features.Todos.Queries;
 
 /// <summary>
 /// Handler for GetAllTodosQuery.
@@ -60,3 +60,4 @@ public class GetTodoByIdQueryHandler : IRequestHandler<GetTodoByIdQuery, TodoDto
         return TodoDto.MapFromEntity(todo);
     }
 }
+

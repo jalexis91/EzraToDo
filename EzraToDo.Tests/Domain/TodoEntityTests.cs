@@ -1,4 +1,4 @@
-using EzraToDo.Domain.Entities;
+using EzraToDo.Core.Entities;
 using FluentAssertions;
 
 namespace EzraToDo.Tests.Domain;
@@ -140,3 +140,4 @@ public class TodoEntityTests
         todo.DueDate.Should().Be(newDueDate);
     }
 }
+

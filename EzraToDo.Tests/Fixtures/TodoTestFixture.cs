@@ -1,4 +1,4 @@
-using EzraToDo.Domain.Entities;
+using EzraToDo.Core.Entities;
 
 namespace EzraToDo.Tests.Fixtures;
 
@@ -58,3 +58,4 @@ public class TodoTestFixture
         return todo;
     }
 }
+

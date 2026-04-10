@@ -1,5 +1,5 @@
-using EzraToDo.Application.Features.Todos.Commands;
-using EzraToDo.Application.Features.Todos.Queries;
+using EzraToDo.Core.Features.Todos.Commands;
+using EzraToDo.Core.Features.Todos.Queries;
 using EzraToDo.Tests.Fixtures;
 using FluentAssertions;
 
@@ -220,3 +220,4 @@ public class TodoEndpointsTests
         response.Todos.Should().BeEmpty();
     }
 }
+

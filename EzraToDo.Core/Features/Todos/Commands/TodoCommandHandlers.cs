@@ -1,9 +1,9 @@
 using MediatR;
-using EzraToDo.Application.Interfaces;
-using EzraToDo.Domain.Entities;
-using EzraToDo.Domain.Exceptions;
+using EzraToDo.Core.Interfaces;
+using EzraToDo.Core.Entities;
+using EzraToDo.Core.Exceptions;
 
-namespace EzraToDo.Application.Features.Todos.Commands;
+namespace EzraToDo.Core.Features.Todos.Commands;
 
 /// <summary>
 /// Handler for CreateTodoCommand.
@@ -167,3 +167,4 @@ public class DeleteTodoCommandHandler : IRequestHandler<DeleteTodoCommand>
         await _repository.DeleteAsync(request.Id, cancellationToken);
     }
 }
+

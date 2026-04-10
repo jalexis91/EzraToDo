@@ -1,6 +1,6 @@
-using EzraToDo.Domain.Entities;
+using EzraToDo.Core.Entities;
 
-namespace EzraToDo.Application.Interfaces;
+namespace EzraToDo.Core.Interfaces;
 
 /// <summary>
 /// Repository interface for Todo aggregate.
@@ -39,3 +39,4 @@ public interface ITodoRepository
     /// </summary>
     Task DeleteAsync(int id, CancellationToken cancellationToken = default);
 }
+

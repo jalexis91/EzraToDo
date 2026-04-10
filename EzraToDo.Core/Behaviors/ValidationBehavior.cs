@@ -1,7 +1,7 @@
 using FluentValidation;
 using MediatR;
 
-namespace EzraToDo.Application.Behaviors;
+namespace EzraToDo.Core.Behaviors;
 
 /// <summary>
 /// MediatR pipeline behavior that automatically validates incoming requests using FluentValidation.
@@ -40,3 +40,4 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
         return await next();
     }
 }
+

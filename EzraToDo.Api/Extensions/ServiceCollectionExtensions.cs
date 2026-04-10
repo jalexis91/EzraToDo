@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using MediatR;
 using FluentValidation;
-using EzraToDo.Application.Interfaces;
-using EzraToDo.Application.Behaviors;
+using EzraToDo.Core.Interfaces;
+using EzraToDo.Core.Behaviors;
 using EzraToDo.Infrastructure.Data;
 using EzraToDo.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -27,7 +27,7 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        var applicationAssembly = typeof(EzraToDo.Application.Features.Todos.Queries.GetAllTodosQuery).Assembly;
+        var applicationAssembly = typeof(EzraToDo.Core.Features.Todos.Queries.GetAllTodosQuery).Assembly;
 
         // Configure Service Defaults (OpenTelemetry, Health Checks, Service Discovery)
         services.AddServiceDefaults();
@@ -123,3 +123,4 @@ public static class ServiceCollectionExtensions
         return endpoints;
     }
 }
+

@@ -16,8 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EzraToDo.Domain\EzraToDo.Domain.csproj" />
-    <ProjectReference Include="..\EzraToDo.Application\EzraToDo.Application.csproj" />
+    <ProjectReference Include="..\EzraToDo.Core\EzraToDo.Core.csproj" />
   </ItemGroup>
 
 </Project>

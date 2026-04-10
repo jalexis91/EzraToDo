@@ -11,8 +11,4 @@
     <PackageReference Include="MediatR" Version="12.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\EzraToDo.Domain\EzraToDo.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

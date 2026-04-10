@@ -1,7 +1,7 @@
-using EzraToDo.Application.Features.Todos.Commands;
-using EzraToDo.Application.Features.Todos.Queries;
-using EzraToDo.Application.Interfaces;
-using EzraToDo.Domain.Entities;
+using EzraToDo.Core.Features.Todos.Commands;
+using EzraToDo.Core.Features.Todos.Queries;
+using EzraToDo.Core.Interfaces;
+using EzraToDo.Core.Entities;
 using FluentAssertions;
 using Moq;
 
@@ -71,7 +71,7 @@ public class TodoCommandHandlerTests
 
         // Act & Assert
         // Verify that ValidationException is thrown for empty title
-        var ex = await Assert.ThrowsAsync<EzraToDo.Domain.Exceptions.ValidationException>(
+        var ex = await Assert.ThrowsAsync<EzraToDo.Core.Exceptions.ValidationException>(
             () => handler.Handle(command, CancellationToken.None));
         ex.Message.Should().Contain("Title is required");
     }
@@ -145,7 +145,7 @@ public class TodoCommandHandlerTests
         var handler = new UpdateTodoCommandHandler(_mockRepository.Object);
 
         // Act & Assert
-        await Assert.ThrowsAsync<EzraToDo.Domain.Exceptions.EntityNotFoundException>(
+        await Assert.ThrowsAsync<EzraToDo.Core.Exceptions.EntityNotFoundException>(
             () => handler.Handle(command, CancellationToken.None));
     }
 
@@ -209,3 +209,4 @@ public class TodoCommandHandlerTests
         _mockRepository.Verify(r => r.DeleteAsync(todoId, It.IsAny<CancellationToken>()), Times.Once);
     }
 }
+

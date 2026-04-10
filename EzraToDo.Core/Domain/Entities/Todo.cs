@@ -1,4 +1,4 @@
-namespace EzraToDo.Domain.Entities;
+namespace EzraToDo.Core.Entities;
 
 /// <summary>
 /// Represents a to-do task in the system.
@@ -100,3 +100,4 @@ public class Todo
         UpdatedAt = DateTime.UtcNow;
     }
 }
+

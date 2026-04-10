@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using EzraToDo.Application.Interfaces;
-using EzraToDo.Domain.Entities;
+using EzraToDo.Core.Interfaces;
+using EzraToDo.Core.Entities;
 using EzraToDo.Infrastructure.Data;
 
 namespace EzraToDo.Infrastructure.Repositories;
@@ -102,3 +102,4 @@ public class TodoRepository : ITodoRepository
         await UpdateAsync(todo, cancellationToken);
     }
 }
+

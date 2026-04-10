@@ -1,8 +1,8 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using EzraToDo.Application.Features.Todos.Commands;
-using EzraToDo.Application.Features.Todos.Queries;
-using EzraToDo.Domain.Exceptions;
+using EzraToDo.Core.Features.Todos.Commands;
+using EzraToDo.Core.Features.Todos.Queries;
+using EzraToDo.Core.Exceptions;
 
 namespace EzraToDo.Api.Endpoints;
 
@@ -122,3 +122,4 @@ public static class TodoEndpoints
 
 public record CreateTodoRequest(string Title, string? Description = null, DateTime? DueDate = null);
 public record UpdateTodoRequest(string Title, string? Description = null, DateTime? DueDate = null);
+

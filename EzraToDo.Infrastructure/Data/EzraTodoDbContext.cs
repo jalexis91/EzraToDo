@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using EzraToDo.Domain.Entities;
+using EzraToDo.Core.Entities;
 
 namespace EzraToDo.Infrastructure.Data;
 
@@ -60,3 +60,4 @@ public class EzraTodoDbContext : DbContext
         });
     }
 }
+

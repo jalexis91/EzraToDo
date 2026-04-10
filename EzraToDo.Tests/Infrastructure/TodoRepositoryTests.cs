@@ -1,5 +1,5 @@
-using EzraToDo.Application.Interfaces;
-using EzraToDo.Domain.Entities;
+using EzraToDo.Core.Interfaces;
+using EzraToDo.Core.Entities;
 using EzraToDo.Tests.Fixtures;
 using FluentAssertions;
 using Moq;
@@ -181,3 +181,4 @@ public class TodoRepositoryTests
         result.Should().AllSatisfy(t => t.IsCompleted.Should().BeFalse());
     }
 }
+

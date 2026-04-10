@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace EzraToDo.Application.Features.Todos.Queries;
+namespace EzraToDo.Core.Features.Todos.Queries;
 
 /// <summary>
 /// Query to retrieve all todos with optional filtering, searching, and sorting.
@@ -41,7 +41,7 @@ public record TodoDto(
     /// Maps a Domain Entity to a Data Transfer Object.
     /// Centralized to minimize duplication across CQRS handlers.
     /// </summary>
-    public static TodoDto MapFromEntity(EzraToDo.Domain.Entities.Todo todo) =>
+    public static TodoDto MapFromEntity(EzraToDo.Core.Entities.Todo todo) =>
         new(
             Id: todo.Id,
             Title: todo.Title,
@@ -53,3 +53,4 @@ public record TodoDto(
             UpdatedAt: todo.UpdatedAt
         );
 }
+

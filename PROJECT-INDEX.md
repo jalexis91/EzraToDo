@@ -37,11 +37,13 @@ EzraToDo/
 │   ├── src/i18n/                                ✅ Localization (i18next)
 │   └── src/services/                            ✅ API Service Layer
 │
-├── EzraToDo.Domain/                             ← CORE LAYER
-│   └── Entities/Todo.cs                         ✅ Business Logic
-│
-├── EzraToDo.Application/                        ← BUSINESS LAYER
-│   └── Features/Todos/                          ✅ CQRS Commands & Queries
+├── EzraToDo.Core/                               ← CORE LAYER (Domain + Application)
+│   ├── Domain/
+│   │   ├── Entities/                            ✅ Domain Entities
+│   │   └── Exceptions/                          ✅ Domain Exceptions
+│   ├── Features/Todos/                          ✅ CQRS Commands & Queries
+│   ├── Interfaces/                              ✅ Repository Abstractions
+│   └── Behaviors/                               ✅ MediatR Pipeline Behaviors
 │
 ├── EzraToDo.Infrastructure/                     ← DATA LAYER
 │   └── Data/EzraTodoDbContext.cs                ✅ EF Core persistent SQLite
@@ -70,7 +72,7 @@ aspire run
 
 | Metric | Value |
 |--------|-------|
-| **Layers** | 4 (Domain, Application, Infrastructure, Api) |
+| **Layers** | 3 (Core, Infrastructure, Api) |
 | **Frameworks** | .NET 10, React 19, Aspire 13.2 |
 | **Patterns** | CQRS, Repository, DDD, DI |
 | **Database** | SQLite (Persistent file-based) |
