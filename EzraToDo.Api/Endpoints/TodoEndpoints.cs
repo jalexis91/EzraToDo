@@ -21,37 +21,30 @@ public static class TodoEndpoints
             .WithTags("Todos");
 
         group.MapGet("/", GetAllTodos)
-            .WithName("GetAllTodos")
             .Produces<GetAllTodosQueryResponse>(StatusCodes.Status200OK);
 
         group.MapGet("/{id:int}", GetTodoById)
-            .WithName("GetTodoById")
             .Produces<TodoDto>(StatusCodes.Status200OK)
             .Produces(StatusCodes.Status404NotFound);
 
         group.MapPost("/", CreateTodo)
-            .WithName("CreateTodo")
             .Produces<CreateTodoCommandResponse>(StatusCodes.Status201Created)
             .Produces(StatusCodes.Status400BadRequest);
 
         group.MapPut("/{id:int}", UpdateTodo)
-            .WithName("UpdateTodo")
             .Produces<UpdateTodoCommandResponse>(StatusCodes.Status200OK)
             .Produces(StatusCodes.Status400BadRequest)
             .Produces(StatusCodes.Status404NotFound);
 
         group.MapPatch("/{id:int}/complete", CompleteTodo)
-            .WithName("CompleteTodo")
             .Produces(StatusCodes.Status204NoContent)
             .Produces(StatusCodes.Status404NotFound);
 
         group.MapPatch("/{id:int}/reopen", ReopenTodo)
-            .WithName("ReopenTodo")
             .Produces(StatusCodes.Status204NoContent)
             .Produces(StatusCodes.Status404NotFound);
 
         group.MapDelete("/{id:int}", DeleteTodo)
-            .WithName("DeleteTodo")
             .Produces(StatusCodes.Status204NoContent)
             .Produces(StatusCodes.Status404NotFound);
     }

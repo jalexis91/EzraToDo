@@ -79,9 +79,9 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseHttpsRedirection();
 if (!app.Environment.IsDevelopment())
 {
+    app.UseHttpsRedirection();
     app.UseHsts();
 }
 
@@ -103,12 +103,17 @@ var versionSet = app.NewApiVersionSet()
     .ReportApiVersions()
     .Build();
 
+// Group for versioned endpoints
 var apiV1 = app.MapGroup("/api/v{version:apiVersion}")
     .WithApiVersionSet(versionSet)
     .MapToApiVersion(1, 0);
 
 // Map Todo endpoints to the versioned group
 apiV1.MapTodoEndpoints();
+
+// Also map to /api for UI compatibility (non-versioned fallback)
+var apiBase = app.MapGroup("/api");
+apiBase.MapTodoEndpoints();
 
 // Health check endpoint
 app.MapGet("/health", () => Results.Ok(new { status = "healthy" }))
